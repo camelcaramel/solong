@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:00:20 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:46 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 23:13:27 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
 /*
 direction 
@@ -20,7 +20,7 @@ direction
 4 : left
 */
 
-int		monitor(int keycode ,t_data *data)
+int	monitor(int keycode, t_data *data)
 {
 	if (data->game_over == 0 && data->is_win == 0)
 	{
@@ -36,8 +36,8 @@ int		monitor(int keycode ,t_data *data)
 			exit(1);
 	}
 	else if (keycode == 53)
-			exit(1);
-	return 0;
+		 exit(1);
+	return (0);
 }
 
 void	move_player(int direction, t_data *data)
@@ -91,6 +91,6 @@ void	movement(t_data *data, int index, int cur)
 		data->map_data[cur] = '0';
 	if (data->map_data[index] == 'E' && data->is_win == 0)
 		data->map_data[index] = 'X';
-	else	
+	else
 		data->map_data[index] = 'P';
 }

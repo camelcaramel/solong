@@ -6,13 +6,13 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:58:44 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:37:00 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 18:50:17 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
-static int		num_length(unsigned int n)
+static int	num_length(unsigned int n)
 {
 	int		len;
 
@@ -22,7 +22,7 @@ static int		num_length(unsigned int n)
 	return (len);
 }
 
-static void		strrev(char *s)
+static void	strrev(char *s)
 {
 	int			len;
 	char		temp;
@@ -38,7 +38,7 @@ static void		strrev(char *s)
 	}
 }
 
-static void		fill_number(char *s, unsigned int n)
+static void	fill_number(char *s, unsigned int n)
 {
 	char	*temp;
 
@@ -58,7 +58,22 @@ static void		fill_number(char *s, unsigned int n)
 	strrev(temp);
 }
 
-char			*ft_itoa(int n)
+static void	itoa_helper(char *ret, int n, char *ment, int num)
+{
+	int	index;
+
+	if (n < 0)
+		*ret = '-';
+	index = -1;
+	while (ment[++index])
+		ret[index] = ment[index];
+	if (n < 0)
+		fill_number(ret + 1 + 8, num);
+	else
+		fill_number(ret + 8, num);
+}
+
+char	*ft_itoa(int n)
 {
 	unsigned int	num;
 	int				size;
@@ -67,19 +82,19 @@ char			*ft_itoa(int n)
 	int				index;
 
 	ment = "score = ";
-	num = (n < 0) ? (-1) * (n) : (n);
-	size = num_length(num);
-	size = (n < 0) ? (size + 2) : (size + 1);
-	if ((ret = (char *)malloc(sizeof(char) * (size + 8))) == NULL)
-		return (NULL);
+	num = n;
 	if (n < 0)
-		*ret = '-';
-	index = 0;
-	while (ment[index])
-	{
-		ret[index] = ment[index];
-		index++;
-	}
-	fill_number((n < 0) ? (ret + 1 + 8) : (ret + 8), num);
+		num = (-1) * (n);
+	else
+		num = n;
+	size = num_length(num);
+	if (n < 0)
+		size = size + 2;
+	else
+		size = size + 1;
+	ret = (char *)malloc(sizeof(char) * (size + 8));
+	if (ret == NULL)
+		return (NULL);
+	itoa_helper(ret, n, ment, num);
 	return (ret);
 }
