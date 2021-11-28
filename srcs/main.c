@@ -6,13 +6,13 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:24:01 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:45 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 23:28:41 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
-int		check_input_str(char *str, t_data *data)
+int	check_input_str(char *str, t_data *data)
 {
 	int		index;
 	int		i;

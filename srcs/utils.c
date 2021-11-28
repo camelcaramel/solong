@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:37:23 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:58 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 23:26:43 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -58,7 +58,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 size_t	ft_strlen(const char *s)
 {
-	const char *temp;
+	const char	*temp;
 
 	temp = s;
 	while (*temp)

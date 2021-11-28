@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 17:01:32 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:54 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 23:32:20 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
 void	render_player(t_data *data, int direction, int x, int y)
 {
@@ -20,7 +20,7 @@ void	render_player(t_data *data, int direction, int x, int y)
 		data->ani_y = y;
 		return ;
 	}
-	if (direction ==  1 || direction == 3)
+	if (direction == 1 || direction == 3)
 		render_player_face(data, x, y);
 	else if (direction == 2)
 	{
@@ -39,17 +39,17 @@ void	render_player(t_data *data, int direction, int x, int y)
 void	render_player_face(t_data *data, int x, int y)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->player_img,
-			x, y);
+		x, y);
 }
 
 void	render_player_right(t_data *data, int x, int y)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->p_r_img,
-			x, y);
+		x, y);
 }
 
 void	render_player_left(t_data *data, int x, int y)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->p_l_img,
-			x, y);
+		x, y);
 }
