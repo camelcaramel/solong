@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:55:58 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:52 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 23:19:17 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
 void	check_format(t_data *data)
 {
@@ -34,7 +34,8 @@ void	check_format(t_data *data)
 		error_handler(data);
 }
 
-void	check_char(t_data *data, int *row_count, int *col_count, unsigned int *index)
+void	check_char(t_data *data, int *row_count,
+					int *col_count, unsigned int *index)
 {
 	if (data->map_data[*index] == '\n')
 	{
@@ -44,12 +45,14 @@ void	check_char(t_data *data, int *row_count, int *col_count, unsigned int *inde
 		*(col_count) += 1;
 		*(index) += 1;
 	}
-	else (*row_count) += 1;
+	else
+		(*row_count) += 1;
 	line_error_checker(*row_count, *col_count, *index, data);
 	*index = *row_count + (data->max_row + 1) * (*(col_count));
 }
 
-void	line_error_checker(int row_count, int col_count, int index, t_data *data)
+void	line_error_checker(int row_count, int col_count,
+		int index, t_data *data)
 {
 	char	cur;
 

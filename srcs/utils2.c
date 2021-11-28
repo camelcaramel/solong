@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:58:44 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:50:17 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 23:15:14 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ static int	num_length(unsigned int n)
 {
 	int		len;
 
-	len = 1;
-	while ((n /= 10) > 0)
+	len = 0;
+	while ((n) > 0)
+	{
+		n /= 10;
 		len++;
+	}
 	return (len);
 }
 

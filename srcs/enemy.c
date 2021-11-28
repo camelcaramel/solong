@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 21:43:45 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:41 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/28 23:16:55 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
 void	find_path_enemy(t_data *data)
 {
@@ -48,7 +48,7 @@ void	move_enemy(t_data *data, int from, int x, int y)
 	data->map_data[y * (data->max_row + 1) + x] = 'M';
 }
 
-int		is_possible2move(char c)
+int	is_possible2move(char c)
 {
 	return (c == '0' || c == 'P');
 }
