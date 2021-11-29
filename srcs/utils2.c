@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:58:44 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 23:15:14 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:56:40 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ char	*ft_itoa(int n)
 	int				size;
 	char			*ret;
 	char			*ment;
-	int				index;
 
 	ment = "score = ";
 	num = n;

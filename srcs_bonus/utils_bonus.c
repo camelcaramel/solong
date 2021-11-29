@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:37:23 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:29 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:33:30 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "solong_bonus.h"
+#include "../includes/solong_bonus.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -58,7 +58,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 size_t	ft_strlen(const char *s)
 {
-	const char *temp;
+	const char	*temp;
 
 	temp = s;
 	while (*temp)
@@ -73,7 +73,7 @@ void	error_handler(t_data *data)
 		exit(1);
 	if (data->input_str != NULL)
 		free(data->input_str);
-	if (data->map_data != NULL)
+	if (data == NULL || data->map_data != NULL)
 		free(data->map_data);
 	exit(1);
 }

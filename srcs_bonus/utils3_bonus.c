@@ -6,23 +6,25 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:06:47 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:33 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:33:42 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "solong_bonus.h"
+#include "../includes/solong_bonus.h"
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*ret;
 	char			*temp;
 	unsigned int	s_len;
 
 	s_len = (unsigned int)ft_strlen(s);
-	len = (s_len < len) ? s_len : len;
+	if (s_len < len)
+		len = s_len;
 	if (s_len < start)
 		len = 0;
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
+	ret = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ret)
 		return (NULL);
 	temp = ret;
 	s += start;
@@ -40,7 +42,7 @@ static int	s_search(char const *set, char target)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	const char	*start;
 	const char	*end;

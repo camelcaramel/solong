@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:57:22 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:27 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:33:24 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "solong_bonus.h"
+#include "../includes/solong_bonus.h"
 
 void	game_over(t_data *data)
 {

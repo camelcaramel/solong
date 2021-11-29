@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:23:37 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:14 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:33:00 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "solong_bonus.h"
+#include "../includes/solong_bonus.h"
 
 void	parse_map(int fd, t_data *data)
 {
@@ -26,17 +26,20 @@ void	parse_map(int fd, t_data *data)
 	data->map_data = (char *)malloc(sizeof(char) * p_data.size);
 	if (data->map_data == NULL)
 		error_handler(data);
-	while (0 < (rd_size = read(fd, buf, 100)))
+	rd_size = read(fd, buf, 100);
+	while (0 < rd_size)
 	{
 		if (data->max_row == 0)
 			check_row_length(buf, &p_data, data);
 		expand_map(data, &p_data, buf, rd_size);
 		ft_memset(buf, '\0', 101);
+		rd_size = read(fd, buf, 100);
 	}
 	check_format(data);
 }
 
-void	expand_map(t_data *data, t_parse_data *p_data, char *buf, size_t buf_size)
+void	expand_map(t_data *data, t_parse_data *p_data,
+	char *buf, size_t buf_size)
 {
 	char	*temp;
 
@@ -44,7 +47,9 @@ void	expand_map(t_data *data, t_parse_data *p_data, char *buf, size_t buf_size)
 	{
 		temp = (char *)malloc(sizeof(char) * (p_data->size) * 2);
 		if (temp == NULL)
+		{
 			error_handler(data);
+		}
 		ft_memmove(temp, data->map_data, p_data->size);
 		free(data->map_data);
 		data->map_data = temp;

@@ -6,13 +6,13 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:24:01 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 18:36:11 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:32:47 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "solong_bonus.h"
+#include "../includes/solong_bonus.h"
 
-int		check_input_str(char *str, t_data *data)
+int	check_input_str(char *str, t_data *data)
 {
 	int		index;
 	int		i;
@@ -22,7 +22,7 @@ int		check_input_str(char *str, t_data *data)
 	i = 0;
 	pat = ".ber";
 	str = ft_strtrim(str, " ");
-	if (str == (char *)NULL)
+	if (str == NULL)
 		return (0);
 	while (*(str + i))
 		i++;
@@ -58,7 +58,7 @@ void	calculate_size(t_data *data)
 	data->box_width = 22 * data->max_col;
 }
 
-int		main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int		fd;
 	t_data	data;
@@ -67,15 +67,10 @@ int		main(int argc, char *argv[])
 
 	init_data(&data);
 	if (argc != 2 || !check_input_str(argv[1], &data))
-	{
-		printf("Error.\n");
-		return (0);
-	}
-	if ((fd = open(argv[1], O_RDONLY)) < 0)
-	{
-		printf("Error.\n");
-		return (0);
-	}
+		error_handler(&data);
+	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
+		error_handler(&data);
 	else
 	{
 		data.position = &pos;

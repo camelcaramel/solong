@@ -6,7 +6,7 @@
 #    By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 15:26:48 by donghwik          #+#    #+#              #
-#    Updated: 2021/11/01 15:38:14 by donghwik         ###   ########.fr        #
+#    Updated: 2021/11/29 23:01:27 by donghwik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ BONUS_SRCS = ./srcs_bonus/enemy_bonus.c \
 			./srcs_bonus/utils2_bonus.c \
 			./srcs_bonus/utils3_bonus.c \
 			./srcs_bonus/utils_bonus.c
-OBJS = ${SRCS:.c =.o}
+OBJS = ${SRCS:.c=.o}
 BONUS_OBJS = ${BONUS_SRCS:.c=.o}
 
 .c.o :
@@ -60,12 +60,12 @@ all : $(NAME)
 
 clean : 
 	make clean -C mlx
-	rm $(OBJS) $(BONUS_OBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean : clean
-	make fclean -C mlx
-	rm $(NAME)
+	make clean -C mlx
+	rm -rf $(NAME)
 
 re : fclean all
 
-.PHONY	:	all clean fclean re
+.PHONY	: all clean fclean re
