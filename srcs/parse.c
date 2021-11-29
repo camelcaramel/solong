@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:23:37 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 23:31:31 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:15:16 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/solong.h"
+#include "../includes/solong.h"
 
 void	parse_map(int fd, t_data *data)
 {

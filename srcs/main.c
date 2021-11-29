@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:24:01 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/29 22:13:54 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:15:00 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_input_str(char *str, t_data *data)
 	i = 0;
 	pat = ".ber";
 	str = ft_strtrim(str, " ");
-	if (str == (char *)NULL)
+	if (str == NULL)
 		return (0);
 	while (*(str + i))
 		i++;
