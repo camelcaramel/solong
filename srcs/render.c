@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:57:16 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 23:26:16 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:10:24 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void	render_handler(t_data *data, int direction)
 		if (data->map_data[index] == '\n')
 		{
 			row_count = 0;
-			col_count++;
-			index = row_count + (data->max_row + 1) * col_count;
+			index = row_count + (data->max_row + 1) * (++col_count);
 			continue ;
 		}
 		else
@@ -63,15 +62,15 @@ void	render_score(t_data *data)
 {
 	if (data->game_over == 1)
 		mlx_string_put(data->mlx, data->win, data->box_width * (data->max_row / 2),
-			data->box_height *data->max_col + 20 , 0x00bfff, "lose");
+			data->box_height *data->max_col + 20, 0x00bfff, "lose");
 	else if (data->is_win == 0)
 	{
 		mlx_string_put(data->mlx, data->win, data->box_width * (data->max_row / 2),
-			data->box_height *data->max_col + 20 , 0x00bfff, ft_itoa(data->step));
+			data->box_height * data->max_col + 20, 0x00bfff, ft_itoa(data->step));
 	}		
 	else
 		mlx_string_put(data->mlx, data->win, data->box_width * (data->max_row / 2),
-			data->box_height *data->max_col + 20 , 0x00bfff, "Win!");
+			data->box_height * data->max_col + 20, 0x00bfff, "Win!");
 }
 
 void	repaint(t_data *data)

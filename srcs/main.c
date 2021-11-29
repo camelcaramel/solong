@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:24:01 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/28 23:28:41 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:13:54 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_input_str(char *str, t_data *data)
 	pat = ".ber";
 	str = ft_strtrim(str, " ");
 	if (str == (char *)NULL)
-		return (0); 
+		return (0);
 	while (*(str + i))
 		i++;
 	while (*(str + i - index) && index < 5)
@@ -58,7 +58,7 @@ void	calculate_size(t_data *data)
 	data->box_width = 22 * data->max_col;
 }
 
-int		main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int		fd;
 	t_data	data;
@@ -67,15 +67,10 @@ int		main(int argc, char *argv[])
 
 	init_data(&data);
 	if (argc != 2 || !check_input_str(argv[1], &data))
-	{
-		printf("Error.\n");
-		return (0);
-	}
-	if ((fd = open(argv[1], O_RDONLY)) < 0)
-	{
-		printf("Error.\n");
-		return (0);
-	}
+		error_handler(&data);
+	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
+		error_handler(&data);
 	else
 	{
 		data.position = &pos;
