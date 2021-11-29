@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:57:16 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/29 22:21:21 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:22:03 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	render_score(t_data *data)
 		mlx_string_put(data->mlx, data->win, x, y, 0x00bfff, "lose");
 	else if (data->is_win == 0)
 	{
-		mlx_string_put(data->mlx, data->win, x, y, 0x00bfff, 
+		mlx_string_put(data->mlx, data->win, x, y, 0x00bfff,
 			ft_itoa(data->step));
 	}		
 	else
