@@ -6,11 +6,11 @@
 #    By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 15:26:48 by donghwik          #+#    #+#              #
-#    Updated: 2021/11/29 23:01:27 by donghwik         ###   ########.fr        #
+#    Updated: 2021/11/29 23:17:16 by donghwik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = solong
+NAME = so_long
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 LIBRARY_FLAG = -L mlx -l mlx
