@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:25:47 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/30 14:27:06 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:53:58 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	start(t_data *data, int fd)
 	parse_map(fd, data);
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, 22 * data->max_row,
-		22 * data->max_col + 50, "so_long");
+			22 * data->max_col + 50, "so_long");
 	data->layer = mlx_new_image(data->mlx, 22 * data->max_row,
 			22 * data->max_col + 50);
 	set_enemy(data);

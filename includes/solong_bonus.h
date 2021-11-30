@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ../includes/solong.h                                           :+:      :+:    :+:   */
+/*   solong_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:19:09 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/01 14:54:42 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:52:49 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef SOLONG_H
- #define SOLONG_H
+#ifndef SOLONG_H
+# define SOLONG_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -19,13 +19,13 @@
 # include <unistd.h>
 # include "../mlx/mlx.h"
 
-typedef	struct	s_pos
+typedef struct s_pos
 {
 	int			x;
 	int			y;
 }				t_pos;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	void	*mlx;
 	void	*win;
@@ -42,6 +42,7 @@ typedef struct	s_data
 	int		step;
 	int		coin_n;
 	int		coin_get;
+	char	*map_data;
 	int		game_over;
 	int		box_width;
 	int		box_height;
@@ -53,10 +54,9 @@ typedef struct	s_data
 	t_pos	*e_pos;
 	int		ani_x;
 	int		ani_y;
-	char	*map_data;
 }			t_data;
 
-typedef	struct	s_parse_data
+typedef struct s_parse_data
 {
 	int	size;
 	int	length;
@@ -64,7 +64,7 @@ typedef	struct	s_parse_data
 	int	last_index;
 }				t_parse_data;
 
-typedef struct	s_hoop_data
+typedef struct s_hoop_data
 {
 	int			x;
 	int			y;
@@ -78,10 +78,12 @@ size_t	ft_strlen(const char *s);
 void	error_handler(t_data *data);
 
 void	parse_map(int fd, t_data *data);
-void	line_error_checker(int row_count, int col_count, int index, t_data *data);
+void	line_error_checker(int row_count,
+			int col_count, int index, t_data *data);
 void	check_format(t_data *data);
 void	check_row_length(char *line, t_parse_data *p_data, t_data *data);
-void	expand_map(t_data *data, t_parse_data *p_data, char *buf, size_t buf_size);
+void	expand_map(t_data *data, t_parse_data *p_data,
+			char *buf, size_t buf_size);
 
 void	render_handler(t_data *data, int direction);
 void	render(t_data *data, int direction, t_pos pos, char target);
@@ -100,7 +102,7 @@ void	render_coin(t_data *data, int x, int y);
 void	render_stone(t_data *data, int x, int y);
 void	render_exit(t_data *data, int x, int y);
 
-int		monitor(int keycode ,t_data *data);
+int		monitor(int keycode, t_data *data);
 void	move_player(int direction, t_data *data);
 void	killed(t_data *data);
 void	game_over(t_data *data);
@@ -126,9 +128,12 @@ void	init_image(t_data *data);
 void	consider_dir(int *x, int *y, int direction);
 void	movement(t_data *data, int index, int cur);
 
-void	check_char(t_data *data, int *row_count, int *col_count, unsigned int *index);
+void	check_char(t_data *data, int *row_count,
+			int *col_count, unsigned int *index);
 int		check_input_str(char *str, t_data *data);
 
 int		exit_btn_handler(t_data *data);
 
-# endif
+void	init_pointer_data(t_data *data);
+
+#endif
