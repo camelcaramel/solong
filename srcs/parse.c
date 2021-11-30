@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:23:37 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/29 22:56:00 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:23:49 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	parse_map(int fd, t_data *data)
 	{
 		if (data->max_row == 0)
 			check_row_length(buf, &p_data, data);
+		else
+			p_data.length += ft_strlen(buf);
 		expand_map(data, &p_data, buf, rd_size);
 		ft_memset(buf, '\0', 101);
 		rd_size = read(fd, buf, 100);

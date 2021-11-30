@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:24:01 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/29 22:55:53 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 11:14:23 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,38 @@ int	check_input_str(char *str, t_data *data)
 
 void	init_data(t_data *data)
 {
-	data->coin_n = 0;
-	data->coin_get = 0;
-	data->step = 0;
-	data->is_win = 0;
 	data->max_row = 0;
 	data->max_col = 0;
+	data->step = 0;
+	data->coin_n = 0;
+	data->coin_get = 0;
 	data->game_over = 0;
+	data->box_width = 0;
+	data->box_height = 0;
+	data->is_win = 0;
 	data->is_exit = 0;
 	data->ani_x = 0;
 	data->ani_y = 0;
+	init_pointer_data(data);
+}
+
+void	init_pointer_data(t_data *data)
+{
+	data->mlx = NULL;
+	data->win = NULL;
+	data->player_img = NULL;
+	data->p_r_img = NULL;
+	data->p_l_img = NULL;
+	data->enemy_img = NULL;
+	data->fence_img = NULL;
+	data->coin_img = NULL;
+	data->exit_img = NULL;
+	data->bg_img = NULL;
 	data->map_data = NULL;
 	data->input_str = NULL;
+	data->position = NULL;
+	data->e_pos = NULL;
+	data->layer = NULL;
 }
 
 void	calculate_size(t_data *data)

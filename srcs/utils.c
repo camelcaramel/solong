@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:37:23 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/29 22:56:34 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:27:55 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ size_t	ft_strlen(const char *s)
 void	error_handler(t_data *data)
 {
 	printf("Error.\n");
-	if (data == NULL)
-		exit(1);
 	if (data->input_str != NULL)
 		free(data->input_str);
 	if (data == NULL || data->map_data != NULL)

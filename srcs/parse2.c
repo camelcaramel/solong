@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:55:58 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/29 22:56:05 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 11:01:39 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	check_char(t_data *data, int *row_count,
 	else
 		(*row_count) += 1;
 	line_error_checker(*row_count, *col_count, *index, data);
-	*index = *row_count + (data->max_row + 1) * (*(col_count));
+	*index = *row_count + (data->max_row + 1) * (*col_count);
 }
 
 void	line_error_checker(int row_count, int col_count,

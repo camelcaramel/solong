@@ -42,6 +42,7 @@ typedef struct	s_data
 	int		step;
 	int		coin_n;
 	int		coin_get;
+	char	*map_data;
 	int		game_over;
 	int		box_width;
 	int		box_height;
@@ -53,7 +54,6 @@ typedef struct	s_data
 	t_pos	*e_pos;
 	int		ani_x;
 	int		ani_y;
-	char	*map_data;
 }			t_data;
 
 typedef	struct	s_parse_data
@@ -131,4 +131,5 @@ int		check_input_str(char *str, t_data *data);
 
 int		exit_btn_handler(t_data *data);
 
+void	init_pointer_data(t_data *data);
 # endif
