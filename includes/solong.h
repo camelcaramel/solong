@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:19:09 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/30 14:48:52 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:50:35 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include "../mlx/mlx.h"
 
-typedef	struct	s_pos
+typedef struct	s_pos
 {
 	int			x;
 	int			y;
@@ -56,7 +56,7 @@ typedef struct	s_data
 	int		ani_y;
 }			t_data;
 
-typedef	struct	s_parse_data
+typedef struct	s_parse_data
 {
 	int	size;
 	int	length;
@@ -64,7 +64,7 @@ typedef	struct	s_parse_data
 	int	last_index;
 }				t_parse_data;
 
-typedef	struct	s_hoop_data
+typedef struct	s_hoop_data
 {
 	int			x;
 	int			y;
@@ -79,11 +79,11 @@ void	error_handler(t_data *data);
 
 void	parse_map(int fd, t_data *data);
 void	line_error_checker(int row_count,
-		int col_count, int index, t_data *data);
+			int col_count, int index, t_data *data);
 void	check_format(t_data *data);
 void	check_row_length(char *line, t_parse_data *p_data, t_data *data);
 void	expand_map(t_data *data, t_parse_data *p_data,
-		char *buf, size_t buf_size);
+			char *buf, size_t buf_size);
 
 void	render_handler(t_data *data, int direction);
 void	render(t_data *data, int direction, t_pos pos, char target);
@@ -129,7 +129,7 @@ void	consider_dir(int *x, int *y, int direction);
 void	movement(t_data *data, int index, int cur);
 
 void	check_char(t_data *data, int *row_count,
-		int *col_count, unsigned int *index);
+			int *col_count, unsigned int *index);
 int		check_input_str(char *str, t_data *data);
 
 int		exit_btn_handler(t_data *data);
