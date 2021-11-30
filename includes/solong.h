@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:19:09 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/30 14:50:35 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:51:53 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # include <unistd.h>
 # include "../mlx/mlx.h"
 
-typedef struct	s_pos
+typedef struct s_pos
 {
 	int			x;
 	int			y;
 }				t_pos;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	void	*mlx;
 	void	*win;
@@ -56,7 +56,7 @@ typedef struct	s_data
 	int		ani_y;
 }			t_data;
 
-typedef struct	s_parse_data
+typedef struct s_parse_data
 {
 	int	size;
 	int	length;
@@ -64,7 +64,7 @@ typedef struct	s_parse_data
 	int	last_index;
 }				t_parse_data;
 
-typedef struct	s_hoop_data
+typedef struct s_hoop_data
 {
 	int			x;
 	int			y;
