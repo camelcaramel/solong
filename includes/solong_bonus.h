@@ -6,12 +6,12 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:19:09 by donghwik          #+#    #+#             */
-/*   Updated: 2021/11/30 14:52:49 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:55:16 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLONG_H
-# define SOLONG_H
+#ifndef SOLONG_BONUS_H
+# define SOLONG_BONUS_H
 
 # include <stdio.h>
 # include <stdlib.h>
